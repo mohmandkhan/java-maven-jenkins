@@ -27,11 +27,7 @@ pipeline {
             steps {
                 script {
                     echo "Deploying the application..."
-                    withCredentials([
-                        usernamePassword: (credentials: 'docker-hub-repo', usernameVariable: USER, passwordVariable: PWD)
-                    ]) {
-                        echo "User is ${USER} and ${PWD}"
-                    }
+                    echo "deploying with ${SERVER_CREDENTIALS}"
                 }
             }
         }
